@@ -24,7 +24,7 @@ public class ListeBigI {
     	this.tete = new Maillon(x); // ou bien: this(new Maillon(x));
     }
     
-  /** @param tabListe est un tableau contenant les elements de la liste
+    /** @param tabListe est un tableau contenant les elements de la liste
      * Pre-requis : aucun
      */
     public ListeBigI(BigInteger[] tabListe) {
@@ -39,7 +39,7 @@ public class ListeBigI {
 	}
     }
 
-   /**
+    /**
      * Prerequis: aucun
      * construit une liste completement disjointe de la liste l 
      */
@@ -73,20 +73,20 @@ public class ListeBigI {
 	this.tete=m;
     }
 
-	public void ajoutListe(ListeBigI l){
-		Maillon cur = l.tete;
-		while(cur!=null){
-			ajoutTete(cur.getVal());
-			cur = cur.getSuiv();
-		}
+    public void ajoutListe(ListeBigI l){
+	Maillon cur = l.tete;
+	while(cur!=null){
+	    ajoutTete(cur.getVal());
+	    cur = cur.getSuiv();
 	}
+    }
 
-	public BigInteger supprTete(){
-		//pré this non vide
-		BigInteger res = tete.getVal();
-		tete = tete.getSuiv();
-		return res;
-	}
+    public BigInteger supprTete(){
+	//pré this non vide
+	BigInteger res = tete.getVal();
+	tete = tete.getSuiv();
+	return res;
+    }
 
     public boolean contient (BigInteger x) {
 	Maillon courant = this.tete;
