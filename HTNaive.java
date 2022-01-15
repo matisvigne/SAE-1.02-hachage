@@ -10,6 +10,10 @@ public class HTNaive {
 		this.HashTest = new ListeBigI[m];
     }
 
+	public ListeBigI getListe(int i){
+		return this.HashTest[i];
+	}
+
     public int h(BigInteger u) {
 		return u.intValue() % this.HashTest.length;
     }
@@ -42,5 +46,19 @@ public class HTNaive {
 		}
     }
 
+	public ListeBigI getElements(){
+		ListeBigI elements = new ListeBigI();
+		for(int i = 0; i < this.HashTest.length; i++){
+			elements.ajoutListe(this.getListe(i));
+		}
+		return elements;
+	}
 
+	public String toString(){
+		String affichage = "";
+		for(int i = 0; i < this.HashTest.length; i++){
+			affichage += "t[" + i + "] : " + this.getListe(i) + " (élément de la liste " + i + ")\n";
+		}
+		return affichage;
+	}
 }

@@ -7,17 +7,17 @@ public class Maillon {
 
     /** Constructeur vide */
     public Maillon () { 
-	suivant = null; 
+        suivant = null; 
     }
 
     /** Constructeur avec la valeur */
     public Maillon (BigInteger n) {
-	valeur = n;
-	suivant = null; 
+        valeur = n;
+        suivant = null; 
     }
 
     public BigInteger getVal() {
-	return this.valeur;
+        return this.valeur;
     }
 
     public void setVal(BigInteger v) {
@@ -25,15 +25,15 @@ public class Maillon {
     }
 
     public Maillon getSuiv () {
-	return this.suivant;
+        return this.suivant;
     }
 
     public void setSuiv (Maillon m) {
-	this.suivant = m;
+        this.suivant = m;
     }
 
     public String toString () {
-	return this.valeur+"";
+        return this.valeur+"";
     }
 
     /* -------------------------------------------------- */

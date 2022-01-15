@@ -1,5 +1,4 @@
 
-
 import java.math.BigInteger;
 
 public class ListeBigI {
@@ -69,12 +68,12 @@ public class ListeBigI {
 		Maillon m = new Maillon(x);
 		m.setSuiv(this.tete);
 		this.tete=m;
-		}
+	}
 
 	public void ajoutListe(ListeBigI l){
 		Maillon cur = l.tete;
 		while(cur!=null){
-			ajoutTete(cur.getVal());
+			this.ajoutTete(cur.getVal());
 			cur = cur.getSuiv();
 		}
     }
@@ -142,11 +141,13 @@ public class ListeBigI {
 			Maillon prev = this.tete;
 			Maillon current = prev.getSuiv();
 			while (current != null && current.getVal() != n) {
-			prev = current;
+				prev = current;
+				current = current.getSuiv();	    
 			current = current.getSuiv();	    
+				current = current.getSuiv();	    
 			}
 			if (current != null) {  // current.getVal() == n
-			prev.setSuiv(current.getSuiv());
+				prev.setSuiv(current.getSuiv());
 			}
 		}				
     }
