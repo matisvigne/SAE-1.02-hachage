@@ -5,8 +5,7 @@ public class ListeBigI {
 
     private Maillon tete; 
 
-    /** Constructeur d'une liste vide
-     */
+    /** Constructeur d'une liste vide */
     public ListeBigI() {
 		this.tete = null; 
     }
