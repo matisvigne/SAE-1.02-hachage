@@ -1,8 +1,17 @@
+import java.math.BigInteger;
+
+import java.util.Random;
+
 public class MainHTNaive {
     public static void main(String []args){
+        BigInteger[] big = new BigInteger[]{BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48))};
+        ListeBigI listeTest = new ListeBigI(big);
         HTNaive htTest = new HTNaive(5);
 
-        System.out.println(htTest.getElements() + "\n");
+        htTest.ajouteListe(listeTest);
+
+        // System.out.println(htTest.getElements() + "\n");
         System.out.println(htTest.toString());
-    } 
+        System.out.println(htTest.toStringV2());
+    }
 }

@@ -10,11 +10,16 @@ public class HTNaive {
     }
 
 	public HTNaive(ListeBigI l, int m){
-		// jsp
+		this(m);
+		this.ajouteListe(l);
 	}
 
 	public HTNaive(ListeBigI l, double f){
-		
+		HTNaive tmp = new HTNaive(1000);
+		tmp.ajouteListe(l);
+		int cardinal = (int)(tmp.getCardinal() * f);
+		this.HashTest = new ListeBigI[cardinal];
+		this.ajouteListe(l);
 	}
 
 	public ListeBigI getListe(int i){
