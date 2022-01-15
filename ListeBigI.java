@@ -9,13 +9,13 @@ public class ListeBigI {
     /** Constructeur d'une liste vide
      */
     public ListeBigI() {
-	this.tete = null; 
+		this.tete = null; 
     }
 
     /** Constructeur d'une liste a partir d'un maillon
      */
     public ListeBigI(Maillon m) { // OBSOLETE : NE PLUS UTILISER
-	this.tete = m;
+		this.tete = m;
     }
 
     /** Constructeur d'une liste a un seul element
@@ -28,15 +28,15 @@ public class ListeBigI {
      * Pre-requis : aucun
      */
     public ListeBigI(BigInteger[] tabListe) {
-	this(); 
-	if (tabListe.length > 0) {
-	    this.tete = new Maillon (tabListe[0]);
-	    Maillon curThis = this.tete;
-	    for (int i = 1 ; i < tabListe.length ; i++) {
-		curThis.setSuiv (new Maillon(tabListe[i])); // creation et accrochage du maillon (encore vide) suivant
-		curThis = curThis.getSuiv();
-	    }
-	}
+		this(); 
+		if (tabListe.length > 0) {
+			this.tete = new Maillon (tabListe[0]);
+			Maillon curThis = this.tete;
+			for (int i = 1 ; i < tabListe.length ; i++) {
+				curThis.setSuiv (new Maillon(tabListe[i])); // creation et accrochage du maillon (encore vide) suivant
+				curThis = curThis.getSuiv();
+			}
+		}
     }
 
     /**
@@ -44,117 +44,111 @@ public class ListeBigI {
      * construit une liste completement disjointe de la liste l 
      */
     public ListeBigI(ListeBigI l) { // constructeur par recopie profonde
-	this(); 
-	if (! l.estVide()) {
-
-	    this.tete = new Maillon (l.tete.getVal());
-	    Maillon curThis = this.tete;
-	    Maillon curL = l.tete.getSuiv();
-
-	    while (curL != null) {
-		curThis.setSuiv (new Maillon(curL.getVal())); // creation et accrochage du maillon suivant
-		curThis = curThis.getSuiv();
-		curL = curL.getSuiv();
-	    }
-	}
+		this(); 
+		if (!l.estVide()) {
+			this.tete = new Maillon (l.tete.getVal());
+			Maillon curThis = this.tete;
+			Maillon curL = l.tete.getSuiv();
+			while (curL != null) {
+				curThis.setSuiv (new Maillon(curL.getVal())); // creation et accrochage du maillon suivant
+				curThis = curThis.getSuiv();
+				curL = curL.getSuiv();
+			}
+		}
     }
 
     public boolean estVide() {
-	return (this.tete == null) ;
-    }
-	 
-    //public int valTete () {
-    //	return this.tete.getVal();
-    //}
-   
-    public void ajoutTete (BigInteger x) {
-	Maillon m = new Maillon(x);
-	m.setSuiv(this.tete);
-	this.tete=m;
-    }
-
-    public void ajoutListe(ListeBigI l){
-	Maillon cur = l.tete;
-	while(cur!=null){
-	    ajoutTete(cur.getVal());
-	    cur = cur.getSuiv();
+		return (this.tete == null) ;
 	}
+		
+	//public int valTete () {
+		//	return this.tete.getVal();
+	//}
+	
+	public void ajoutTete (BigInteger x) {
+		Maillon m = new Maillon(x);
+		m.setSuiv(this.tete);
+		this.tete=m;
+		}
+
+	public void ajoutListe(ListeBigI l){
+		Maillon cur = l.tete;
+		while(cur!=null){
+			ajoutTete(cur.getVal());
+			cur = cur.getSuiv();
+		}
     }
 
     public BigInteger supprTete(){
-	//pré this non vide
-	BigInteger res = tete.getVal();
-	tete = tete.getSuiv();
-	return res;
-    }
-
-    public boolean contient (BigInteger x) {
-	Maillon courant = this.tete;
-	while (courant != null && !(courant.getVal().equals(x))) {
-	    courant = courant.getSuiv(); 
+		//pré this non vide
+		BigInteger res = tete.getVal();
+		tete = tete.getSuiv();
+		return res;
 	}
-	return courant != null;
+
+	public boolean contient (BigInteger x) {
+		Maillon courant = this.tete;
+		while (courant != null && !(courant.getVal().equals(x))) {
+			courant = courant.getSuiv(); 
+		}
+		return courant != null;
     }
 
     public String toString() {
-	String s = "(";
-	Maillon courant = this.tete;
-	while (courant != null) {
-	    s = s + (courant.getVal()) + ((courant.getSuiv() != null) ? ", " : "");
-	    courant = courant.getSuiv();
-	}
-	return s + ")";
+		String s = "(";
+		Maillon courant = this.tete;
+		while (courant != null) {
+			s = s + (courant.getVal()) + ((courant.getSuiv() != null) ? ", " : "");
+			courant = courant.getSuiv();
+		}
+		return s + ")";
     }
 
     /** Longueur d'une liste
      */
     public int longueur () {
-	int lg = 0;
-	Maillon courant = this.tete;
-	while (courant != null) {
-	    lg++;
-	    courant = courant.getSuiv();
-	}
-	return lg;
+		int lg = 0;
+		Maillon courant = this.tete;
+		while (courant != null) {
+			lg++;
+			courant = courant.getSuiv();
+		}
+		return lg;
     }
 
-
-
-    /**  Ajoute @param en fin de liste
-     */
+    /**  Ajoute @param en fin de liste */
     public void ajoutFin (BigInteger n) {
-	if (this.estVide()) {
-	    this.tete = new Maillon(n);
-	}
-	else {
-	    Maillon courant = this.tete;
-	    while (courant.getSuiv() != null) {
-		courant = courant.getSuiv();
-	    }
-	    courant.setSuiv(new Maillon(n));
-	}
+		if (this.estVide()) {
+			this.tete = new Maillon(n);
+		}
+		else {
+			Maillon courant = this.tete;
+			while (courant.getSuiv() != null) {
+			courant = courant.getSuiv();
+			}
+			courant.setSuiv(new Maillon(n));
+		}
     }
 
 
-    /**  Supprime l'elt contenant la premiere occurrence de @param
-     */
+    /**  Supprime l'elt contenant la premiere occurrence de @param */
     public void supprOcc (BigInteger n) {
-	if (this.estVide()) {
-	    // rien
-	}
-	else if (this.tete.getVal().equals(n)) // suppression en tête
-	    this.tete = this.tete.getSuiv();
-	else {
-	    Maillon prev = this.tete;
-	    Maillon current = prev.getSuiv();
-	    while (current != null && current.getVal() != n) {
-		prev = current;
-		current = current.getSuiv();	    
-	    }
-	    if (current != null) {  // current.getVal() == n
-		prev.setSuiv(current.getSuiv());
-	    }
-	}				
+		if (this.estVide()) {
+			// rien
+		}
+		else if (this.tete.getVal().equals(n)) // suppression en tête
+			this.tete = this.tete.getSuiv();
+		else {
+			Maillon prev = this.tete;
+			Maillon current = prev.getSuiv();
+			while (current != null && current.getVal() != n) {
+			prev = current;
+			current = current.getSuiv();	    
+			}
+			if (current != null) {  // current.getVal() == n
+			prev.setSuiv(current.getSuiv());
+			}
+		}				
     }
 
 } // end class
