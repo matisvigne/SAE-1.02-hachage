@@ -4,11 +4,18 @@ public class HTNaive {
 
     private ListeBigI[] HashTest;
 
-
     //Constructeur
     public HTNaive(int m) {
 		this.HashTest = new ListeBigI[m];
     }
+
+	public HTNaive(ListeBigI l, int m){
+		// jsp
+	}
+
+	public HTNaive(ListeBigI l, double f){
+		
+	}
 
 	public ListeBigI getListe(int i){
 		return this.HashTest[i];
@@ -62,5 +69,45 @@ public class HTNaive {
 		return affichage;
 	}
 
-	
+	public int getNbListes(){
+		int nbListes = 0;
+		for(int i = 0; i < this.HashTest.length; i++){
+			nbListes++;
+		}
+		return nbListes;
+	}
+
+	public int getCardinal(){
+		int cardinal = 0;
+		for(int i = 0; i < this.getNbListes(); i++){
+			for(int j = 0; j < this.getListe(i).longueur(); j++){
+				cardinal++;
+			}
+		}
+		return cardinal;
+	}
+
+	public int getMaxSize(){
+		int maxSize = 0;
+		for(int i = 0; i < this.getNbListes(); i++){
+			if (this.getNbListes() > maxSize){
+				maxSize = this.getNbListes();
+			}
+		}
+		return maxSize;
+	}
+
+	public String toStringV2(){
+		String affichage = "";
+		String nbEtoiles = "";
+		for(int i = 0; i < this.getNbListes(); i++){
+			if(this.getListe(i).longueur() == 0){
+				for(int j = 0; j < this.getListe(i).longueur(); j++){
+					nbEtoiles += "*";
+				}
+				affichage += "t[" + i + "] : " + nbEtoiles + "\n";
+			}
+		}
+		return affichage;
+	}
 }
