@@ -10,11 +10,11 @@ public class Dictionnaire {
 
     public static BigInteger stringToBigInteger(String s){
         int longueur = s.length();
-        BigInteger code = BigInteger.valueOf(-1);
-        for(int i = longueur-1; i >= 0; i--){
-            long c = s.charAt(i);
-            c *= (long) Math.pow(256, i);
-            code.add(c);
+        BigInteger mot = BigInteger.valueOf(s.charAt(0));
+        for(int i = 1; i < longueur; i++){
+            mot = mot.multiply(BigInteger.valueOf(256));
+            mot = mot.add(BigInteger.valueOf(s.charAt(i)));
         }
+        return mot;
     }
 }
