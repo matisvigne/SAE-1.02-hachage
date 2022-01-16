@@ -11,6 +11,15 @@ public class Dictionnaire {
         this.table = new HTNaive(m);
     }
 
+    public Dictionnaire(String fileName, int m) {
+        this.table = new HTNaive(m);
+        this.table.ajouteListe(calculeListeInt(fileName));
+    }
+
+    public Dictionnaire(String fileName, double f){
+        this.table = new HTNaive(calculeListeInt(fileName), f);
+    }
+
     public static BigInteger stringToBigInteger(String s){
         int longueur = s.length();
         BigInteger mot = BigInteger.valueOf(s.charAt(0));
@@ -54,7 +63,6 @@ public class Dictionnaire {
     public static int lectureMotsTexte(String fileName) {
         File f = new File(fileName);
         Scanner sc;
-        ListeBigI res = new ListeBigI();
         try {
             sc = new Scanner(f);
         }

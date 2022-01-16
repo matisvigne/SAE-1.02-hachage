@@ -3,6 +3,7 @@ import java.math.BigInteger;
 public class HTNaive {
 
     private ListeBigI[] HashTest;
+	private long totalTimeh;
 
     //Constructeur
     public HTNaive(int m) {
@@ -30,7 +31,12 @@ public class HTNaive {
 	}
 
     public int h(BigInteger u) {
-		return u.intValue() % this.HashTest.length;
+		int h = 0;
+		long deb = System.currentTimeMillis();
+		h = u.intValue() % this.HashTest.length;
+		long fin = System.currentTimeMillis();
+		this.totalTimeh = fin-deb;
+		return h;
     }
 
     public boolean contient(BigInteger u) {

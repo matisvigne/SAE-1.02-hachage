@@ -1,7 +1,5 @@
 import java.math.BigInteger;
 
-import java.util.Random;
-
 public class MainHTNaive {
     public static void main(String []args){
         BigInteger[] big = new BigInteger[]{BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48))};

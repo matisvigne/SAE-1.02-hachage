@@ -4,6 +4,7 @@ import java.math.BigInteger;
 public class ListeBigI {
 
     private Maillon tete; 
+	private long totalTimeContient;
 
     /** Constructeur d'une liste vide */
     public ListeBigI() {
@@ -86,9 +87,12 @@ public class ListeBigI {
 
 	public boolean contient(BigInteger x) {
 		Maillon courant = this.tete;
+		long deb = System.currentTimeMillis();
 		while (courant != null && !(courant.getVal().equals(x))) {
 			courant = courant.getSuiv(); 
 		}
+		long fin = System.currentTimeMillis();
+		this.totalTimeContient = fin-deb;
 		return courant != null;
     }
 

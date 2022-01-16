@@ -1,5 +1,3 @@
-import java.math.BigInteger;
-
 public class MainDictionnaire {
     public static void main(String[]args){
         // BigInteger[] big = new BigInteger[]{BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48)), BigInteger.valueOf(Ut.randomMinMax(2, 48))};
@@ -7,7 +5,7 @@ public class MainDictionnaire {
         // System.out.println(stringToBigInteger(test));
 
         Dictionnaire dico = new Dictionnaire(8);
-        String texte = "LeRougeEtLeNoir.txt";
+        String texte = "randomWordsPetit.txt";
         // Ut.afficher(dico.lectureMotsTexte(texte));
         // Ut.afficher(dico.calculeListeInt(texte).toString());
         System.out.println(dico.calculeListeInt(texte).toString());
