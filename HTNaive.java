@@ -7,6 +7,9 @@ public class HTNaive {
     //Constructeur
     public HTNaive(int m) {
 		this.HashTest = new ListeBigI[m];
+		for(int i = 0; i < this.HashTest.length; i++){
+			this.HashTest[i] = new ListeBigI();
+		}
     }
 
 	public HTNaive(ListeBigI l, int m){

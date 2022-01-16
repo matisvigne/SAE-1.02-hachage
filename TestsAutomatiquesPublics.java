@@ -16,7 +16,7 @@ import java.util.concurrent.*;
 public class TestsAutomatiquesPublics {
  
     public static void main(String[] args) {
-
+ 
 	double note = 0;
 	//ici on lance les tests, si l'appels aux méthodes concernées déclenche une exception ou fait une boucle infinie, pas de pb, on passera qd même au suivant
         note +=runTest(TestsAutomatiquesPublics::testQ4, "testQ4",2);//le dernier paramètre est le barême du test

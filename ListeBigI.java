@@ -63,7 +63,7 @@ public class ListeBigI {
 		//	return this.tete.getVal();
 	//}
 	
-	public void ajoutTete (BigInteger x) {
+	public void ajoutTete(BigInteger x) {
 		Maillon m = new Maillon(x);
 		m.setSuiv(this.tete);
 		this.tete=m;
@@ -84,7 +84,7 @@ public class ListeBigI {
 		return res;
 	}
 
-	public boolean contient (BigInteger x) {
+	public boolean contient(BigInteger x) {
 		Maillon courant = this.tete;
 		while (courant != null && !(courant.getVal().equals(x))) {
 			courant = courant.getSuiv(); 
@@ -104,7 +104,7 @@ public class ListeBigI {
 
     /** Longueur d'une liste
      */
-    public int longueur () {
+    public int longueur() {
 		int lg = 0;
 		Maillon courant = this.tete;
 		while (courant != null) {
@@ -115,7 +115,7 @@ public class ListeBigI {
     }
 
     /**  Ajoute @param en fin de liste */
-    public void ajoutFin (BigInteger n) {
+    public void ajoutFin(BigInteger n) {
 		if (this.estVide()) {
 			this.tete = new Maillon(n);
 		}
@@ -130,7 +130,7 @@ public class ListeBigI {
 
 
     /**  Supprime l'elt contenant la premiere occurrence de @param */
-    public void supprOcc (BigInteger n) {
+    public void supprOcc(BigInteger n) {
 		if (this.estVide()) {
 			// rien
 		}
