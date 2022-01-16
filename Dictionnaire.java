@@ -61,7 +61,7 @@ public class Dictionnaire {
             return 0;
         }
 
-        sc.useDelimiter(" |\\n|,|;|:|\\.|!|\\?|-|\\. ");
+        sc.useDelimiter(" |\\n|,|;|:|\\.|!|\\?|-|\\. |\\? |! ");
         
 
         int nbMots = 0;
@@ -85,7 +85,7 @@ public class Dictionnaire {
             return res;
         }
 
-        sc.useDelimiter(" |\\n|,|;|:|\\.|!|\\?|-|\\. ");
+        sc.useDelimiter(" |\\n|,|;|:|\\.|!|\\?|-|\\. |\\? |! ");
         
         while (sc.hasNext()) {
             String mot = sc.next();

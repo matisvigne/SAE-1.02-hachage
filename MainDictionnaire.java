@@ -7,7 +7,7 @@ public class MainDictionnaire {
         // System.out.println(stringToBigInteger(test));
 
         Dictionnaire dico = new Dictionnaire(10);
-        String texte = "randomWords.txt";
+        String texte = "randomWordsPetit.txt";
         // Ut.afficher(dico.lectureMotsTexte(texte));
         Ut.afficher(dico.calculeListeInt(texte).toString());
     }
