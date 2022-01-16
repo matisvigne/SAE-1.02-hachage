@@ -14,9 +14,11 @@ public class Dictionnaire {
     public static BigInteger stringToBigInteger(String s){
         int longueur = s.length();
         BigInteger mot = BigInteger.valueOf(s.charAt(0));
-        for(int i = 1; i < longueur; i++){
-            mot = mot.multiply(BigInteger.valueOf(256));
-            mot = mot.add(BigInteger.valueOf(s.charAt(i)));
+        if(longueur != 0){
+            for(int i = 1; i < longueur; i++){
+                mot = mot.multiply(BigInteger.valueOf(256));
+                mot = mot.add(BigInteger.valueOf(s.charAt(i)));
+            }
         }
         return mot;
     }
@@ -75,7 +77,7 @@ public class Dictionnaire {
     public static ListeBigI calculeListeInt(String fileName) {
         File f = new File(fileName);
         Scanner sc;
-        ListeBigI res = new ListeBigI(BigInteger.valueOf(lectureMotsTexte(fileName)));
+        ListeBigI res = new ListeBigI();
 
         try {
             sc = new Scanner(f);
@@ -91,6 +93,7 @@ public class Dictionnaire {
             String mot = sc.next();
             res.ajoutTete(stringToBigInteger(mot));
         }
+        sc.close();
         return res;
     }
 }

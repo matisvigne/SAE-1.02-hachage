@@ -6,10 +6,11 @@ public class MainDictionnaire {
         // String test = "hello";
         // System.out.println(stringToBigInteger(test));
 
-        Dictionnaire dico = new Dictionnaire(10);
-        String texte = "randomWordsPetit.txt";
+        Dictionnaire dico = new Dictionnaire(8);
+        String texte = "LeRougeEtLeNoir.txt";
         // Ut.afficher(dico.lectureMotsTexte(texte));
-        Ut.afficher(dico.calculeListeInt(texte).toString());
+        // Ut.afficher(dico.calculeListeInt(texte).toString());
+        System.out.println(dico.calculeListeInt(texte).toString());
     }
 
     // public static BigInteger stringToBigInteger(String s){

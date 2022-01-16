@@ -66,7 +66,7 @@ public class ListeBigI {
 	public void ajoutTete(BigInteger x) {
 		Maillon m = new Maillon(x);
 		m.setSuiv(this.tete);
-		this.tete=m;
+		this.tete = m;
 	}
 
 	public void ajoutListe(ListeBigI l){
@@ -127,7 +127,6 @@ public class ListeBigI {
 			courant.setSuiv(new Maillon(n));
 		}
     }
-
 
     /**  Supprime l'elt contenant la premiere occurrence de @param */
     public void supprOcc(BigInteger n) {
